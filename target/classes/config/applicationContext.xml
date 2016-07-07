@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- spring注解，自动扫描 -->
-    <context:component-scan base-package="com.linus.service"></context:component-scan>
+    <context:component-scan base-package="com.etc.employment.service"></context:component-scan>
 
 	<!-- 定义一个placeholder，读取jdbc.properties -->
 	<bean id="placehoder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -27,14 +27,14 @@
 		<property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:com/linus/mapper/*.xml</value>
+				<value>classpath:com/etc/employment/mapper/*.xml</value>
 			</list>
 		</property>
 	</bean>
 	<!-- 整合配置，让spring扫描所有的dao -->
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.linus.dao"/>
+		<property name="basePackage" value="com.etc.employment.dao"/>
 		<property name="sqlSessionFactoryBeanName" value="splSesionFactory" ></property>
 		
         

@@ -9,13 +9,13 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<!--springmvc 扫描 -->
-	<context:component-scan base-package="com.linus.controller"></context:component-scan>
+	<context:component-scan base-package="com.etc.employment.controller"></context:component-scan>
 	<!-- 添加注解驱动 -->
 	<!-- 简写方式，自动注册如下俩个bean对象，并提工数据绑定支持 -->
 	<mvc:annotation-driven/>
 	<!-- 视图解析配置 --><!-- 简写模式 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		p:prefix="/WEB-INF/" p:suffix=".jsp"/>
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 	<!-- 访问静态资源 -->
 	<!-- <mvc:resources location="/image/" mapping="/image/**"/>
 	<mvc:resources location="/css/" mapping="/css/**"/> --><!-- 如果加一个会报错吗？ -->
