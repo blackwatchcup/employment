@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.employment.dao.UserDao">
+	<!-- 配置二级缓存，容量及能否 -->
+	<cache readOnly="true" size="10000"></cache>
+	<!-- 配置实体类映射 -->
+	<resultMap type="user" id="baseUserResultMap">
+		<id column="uid" property="uid"/>
+		<result column="uname" property="uname"/>
+		<result column="upassword" property="upassword"/>
+	</resultMap>
+	
+	<insert id="addUser" parameterType="user">
+		insert into user(uname, upassword) values(#{uname}, #{upassword}) 
+	</insert>
+	
+</mapper>

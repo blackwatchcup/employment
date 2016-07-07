@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.employment.dao.MemberDao">
+	
+<!-- 配置二级缓存，容量及能否 -->
+	<cache readOnly="true" size="10000"></cache>	
+	
+	<!-- 配置实体类映射 -->
+	<resultMap type="member" id="baseMemberResultMap">
+		<id column="mid" property="mid"/>
+		<result column="mname" property="mname"/>
+		<result column="mpwd" property="mpwd"/>
+		<result column="mphone" property="mphone"/>
+		<result column="memail" property="memail"/>
+		<result column="rname" property="rname"/>
+		<result column="birth" property="birth"/>
+		<result column="mtag" property="mtag"/>
+		<result column="mphoto" property="mphoto"/>
+	</resultMap>
+	<insert id="addMember" parameterType="member" >
+		insert into tb_member(mid, mname, mpwd, mphone, memail, rname, birth, mtag, mphoto) values(#{mid}, #{mname}, #{mpwd}, #{mphone}, #{memail}, #{rname}, #{birth}, #{mtag}, #{mphoto}) 
+	</insert>
+</mapper>
