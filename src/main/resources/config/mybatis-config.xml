@@ -4,9 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
    <configuration>
    	<typeAliases>
-   		<typeAlias type="com.etc.employment.entity.User" alias="user"/>
-   		<typeAlias type="com.etc.employment.entity.Role" alias="role"/>
-   		<typeAlias type="com.etc.employment.entity.Certi" alias="certi"/>
    		<typeAlias type="com.etc.employment.entity.Member" alias="member"/>
+   		<typeAlias type="com.etc.employment.entity.Resume" alias="resume"/>
    	</typeAliases>
    </configuration>

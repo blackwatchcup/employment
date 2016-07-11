@@ -46,7 +46,7 @@ var youdao_conv_id = 271546;
     				    			<li>
 	    				<a rel="nofollow" href="">简历管理</a>
 	    					    			</li>
-	    							    			<li class="current"><a rel="nofollow" href="create.html">发布职位</a></li>
+	    							    			<li class="current"><a rel="nofollow" href="createresume1.html">发布职位</a></li>
 	    		    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
@@ -54,9 +54,9 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-1"></span>
             		<i></i>
             	</dt>
-                                	<dd style="display: none;"><a href="positions.html">我发布的职位</a></dd>
+                                	<dd style="display: none;"><a href="positions.html">我发布的简历</a></dd>
                 	<dd style="display: none;"><a href="positions.html">我收到的简历</a></dd>
-                	<dd class="btm" style="display: none;"><a href="myhome.html">我的公司主页</a></dd>
+                	<dd class="btm" style="display: none;"><a href="myhome.html">我的个人主页</a></dd>
                 	<dd style="display: none;"><a href="jianli.html">我要找工作</a></dd>
                                                 <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
                                 <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
@@ -66,34 +66,20 @@ var youdao_conv_id = 271546;
     <div id="container">
         
         	<div class="sidebar">
-            	<a class="btn_create" href="create.html">发布新职位</a>
+            	<a class="btn_create" href="createresume1.html">投递新简历</a>
                 <dl class="company_center_aside">
-		<dt>我收到的简历</dt>
+		<dt>我收到的面试通知</dt>
 		<dd>
-		<a href="">待处理简历</a> 
+		<a href="">待通知简历</a> 
 			</dd>
 	<dd>
 		<a href="canInterviewResumes.html">待定简历</a>
 	</dd>
-	<dd>
-		<a href="haveNoticeResumes.html">已通知面试简历</a>
-	</dd>
-	<dd>
-		<a href="haveRefuseResumes.html">不合适简历</a>
-	</dd>
+	
 	<dd class="btm">
 		<a href="autoFilterResumes.html">自动过滤简历</a> 
 			</dd>
 </dl>
-<dl class="company_center_aside">
-		<dt>我发布的职位</dt>
-			<dd>
-		<a href="positions.html">有效职位</a>
-	</dd>
-	<dd>
-		<a href="positions.html">已下线职位</a>
-	</dd>
-	</dl>
                 <div class="subscribe_side mt20">
    <div class="f14">想收到更多更好的简历？</div>
    <div class="f18 mb10">就用拉勾招聘加速助手 </div>
@@ -110,18 +96,27 @@ var youdao_conv_id = 271546;
                     <dt>
                         <h1>
                             <em></em>
-                                                       		发布新职位
+                                                       		填写简历
                            	                        </h1>
                     </dt>
                     <dd>
-                    	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
+                    	<div class="ccc_tr">今日已投递 <span>0</span> 个简历   还可投递 <span>5</span> 个简历</div>
                     	<form action="http://www.lagou.com/corpPosition/preview.html" method="post" id="jobForm">
                             <input type="hidden" value="" name="id">
                             <input type="hidden" value="create" name="preview">
                             <input type="hidden" value="25927" name="companyId">
                             <input type="hidden" value="c29d4a7c35314180bf3be5eb3f00048f" name="resubmitToken">
                             <table class="btm">
-                            	<tbody><tr>
+                            	<tbody>
+                            	<tr>
+                                	<td><span class="redstar">*</span></td>
+                                	<td>职位名称</td>
+                                	<td>
+                                    	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="positionName" id="positionName">
+                                    	                                    </td>
+                                </tr>
+                            	
+                            	<tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">职位类别</td>
                                 	<td>
@@ -762,7 +757,7 @@ $(function(){
 		onchange_callback: function(editor){
 	        tinyMCE.triggerSave();
 	        var editorContent = tinyMCE.get(editor.id).getContent();
-		    if(editorContent.length ){
+		    if(editorContent.length > 20){
 				$("#" + editor.id).valid();
 		    }
 	    } 
